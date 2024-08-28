@@ -1,0 +1,72 @@
+<div class="container">
+  <mat-toolbar color="primary" class="app-toolbar">
+    <button mat-icon-button (click)="toggleSidenav()" class="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="assets/keep.png" alt="Google Keep" class="logo">
+    <span class="app-name">Keep</span>
+    <div class="search-bar">
+      <mat-icon>search</mat-icon>
+      <input matInput placeholder="Search">
+    </div>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon>refresh</mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="isListView" matTooltip="Gride view" (click)="setListOrGride()">
+      <mat-icon>grid_view</mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="!isListView" matTooltip="List view" (click)="setListOrGride()">
+      <mat-icon>view_list</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>settings</mat-icon>
+    </button>
+    <button mat-icon-button class="account-button" [matMenuTriggerFor]="menuList">
+      <span class="account-circle">{{userInitial}}</span>
+    </button>
+    <mat-menu #menuList="matMenu">
+      <button mat-menu-item>Profile</button>
+      <button mat-menu-item (click)="onLogout()">Logout</button>
+    </mat-menu>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav 
+      #sidenav 
+      mode="side" 
+      [opened]="true" 
+      [ngClass]="{ 'app-sidenav-collapsed': isSidenavCollapsed, 'app-sidenav-expanded': !isSidenavCollapsed }">
+      <mat-nav-list>
+        <mat-list-item 
+          *ngFor="let item of sidenavitems"
+          
+          [ngClass]="{'active': activeItem === item.name}"
+          (click)="setActive(item.name)">
+          <button mat-icon-button matTooltip={{item.name}}>
+              <mat-icon matListIcon>{{ item.icon }}</mat-icon>    
+              <span>{{ item.label }}</span>
+          </button>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div *ngIf="activeItem === 'notes'">
+        <app-note-form></app-note-form>
+        <app-note-card [itemview]="isListView"></app-note-card>
+      </div>
+      <div *ngIf="activeItem === 'reminders'">
+        <app-note-form></app-note-form>
+        <app-note-card [itemview]="isListView"></app-note-card>
+      </div>
+      <div *ngIf="activeItem === 'archive'">
+        <app-note-card [isArchived]="true" [itemview]="isListView"></app-note-card>
+      </div>
+      <div *ngIf="activeItem === 'trash'">
+        <app-note-card [isTrash]="true" [itemview]="isListView"></app-note-card>
+      </div>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

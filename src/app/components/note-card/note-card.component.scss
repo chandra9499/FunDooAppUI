@@ -1,0 +1,152 @@
+.grideview{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  // margin-top: 20px;
+  height: fit-content;  
+}
+
+.grideview .note{
+  display: flex;
+  justify-content: center;
+  // flex-wrap: wrap;
+  height: fit-content;
+  border-radius: 10px;
+  width: 300px;
+  // padding: 10px;
+  margin: 10px;
+  // position:relative;
+}
+
+.grideview .note:hover{
+  box-shadow: 0px 0px 5px black;
+}
+
+.grideview .note .title {
+  width: fit-content;
+  // margin: 15px 0 0 15px;
+}  
+
+.grideview .note .text {
+  width: fit-content;
+  // margin-top: 5px;
+  // margin: 15px 0 0 15px;
+}
+.grideview .note  mat-card-actions{
+  width: fit-content;
+  margin: 0px;
+  margin-left: -5px;
+  // margin-top: 5px;
+  // margin: 15px 0 0 15px;
+}
+
+.grideview .note  mat-card-actions .tooltip{
+  margin: 0px;
+  padding: 0px;
+  margin-left: -60px;
+  // margin-top: 5px;
+  // margin: 15px 0 0 15px;
+}
+
+.grideview .note mat-icon{
+  display: none;
+  
+  // size: 10px;
+  // font-size: 20px;
+  color: black;
+  width: au;
+}
+
+.grideview .note:hover mat-icon{
+  display: flex;
+}
+
+.grideview .note-footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listview{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  height: fit-content; 
+  // justify-content: center;
+  // align-items: center;
+  // margin-left: 180px;
+  // margin-bottom: 20px;
+}
+
+.listview .note{
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // flex-wrap: wrap;
+  height: auto;
+  width: auto;
+  padding: 0px;
+  margin: 10px 0px;
+  border-radius: 10px;
+  margin-left: 265px;//335px;
+  position:relative;
+  width: 600px;
+  height: auto;
+}
+.listview .note:hover{
+  box-shadow: 0px 0px 5px black;
+}
+
+.listview .note .title {
+  width: 100%;
+  // margin: 15px 0 0 15px;
+}  
+
+.listview .note .text {
+  width: 100%;
+  // margin-top: 5px;
+  // margin: 15px 0 0 15px;
+}
+
+.listview .note mat-icon {
+  display: none;
+}
+
+.listview .note:hover mat-icon {
+  display: flex;
+}
+  
+.listview .note .note-footer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 0px;
+  padding: 0;
+  // justify-content: center;
+}
+ 
+.listview .note .note-footer .tooltip{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: -50px;
+  padding: 0;
+  // justify-content: center;
+}
+
+.note .check-circle {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+}
+
+.mat-mdc-menu-panel {
+    min-width: 0%;
+    max-width: 100%;
+    min-height: 0%;
+    max-height: 100%;
+    height: fit-content;
+}
+

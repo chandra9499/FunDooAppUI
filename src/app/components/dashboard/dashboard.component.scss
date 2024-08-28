@@ -1,0 +1,184 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: white;
+}
+
+.app-toolbar {
+  background-color:white;
+  color: rgb(53, 52, 52);
+  height: 64px;
+  padding: 0 16px;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3);
+}
+
+.app-toolbar .menu{
+  margin-right: 10px;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.app-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-right: 20px;
+  color: rgba(0, 0, 0, 0.777);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin-left: 20px;
+  height: 50%;
+  width: 50%;
+}
+
+.account-button {
+  background-color: blue;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-left: 40px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.account-circle {
+  text-transform: uppercase;
+}
+
+.search-bar mat-icon {
+  margin-right: 8px;
+  color: rgba(95, 99, 104, 0.853);
+}
+
+.search-bar input {
+  background: none;
+  border: none;
+  outline: none;
+  color: rgb(71, 74, 76);
+  width: 100%;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.sidenav-container {
+  height: calc(100vh - 64px);
+}
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.app-sidenav {
+  background-color:white;
+  color: black;
+  width: 250px;
+  box-shadow: 1px 0 3px rgba(60, 120, 60, 0.6);
+  transition: width 0.3s;
+}
+
+.app-sidenav-collapsed {
+  width: 80px;
+  border: none;
+  background-color: transparent;
+  font-family: sans-serif;
+}
+
+// .app-sidenav-collapsed:hover {
+//   width: 70px;
+//   border: none;
+//   background-color: transparent;
+// }
+
+.app-sidenav-collapsed mat-list-item button mat-icon{
+    margin-right: 30px;
+}
+.app-sidenav-collapsed mat-list-item button span{
+  margin-bottom: 25px;
+}
+.app-sidenav-collapsed mat-list-item.active{
+  width: 100px;
+  background-color: transparent;
+}
+
+.app-sidenav-collapsed mat-list-item.active button{
+  background-color: palegoldenrod;
+}
+
+.app-sidenav-collapsed mat-list-item.active button span{
+  margin-left: 20px;
+}
+
+.app-sidenav-expanded {
+  width: 250px;
+  border: none;
+  background-color: transparent;
+}
+
+// .app-sidenav-expanded:hover {
+//   width: 250px;
+//   border: none;
+//   background-color: transparent;
+// }
+
+.app-sidenav-expanded mat-list-item.active{
+  width: 250px;
+  margin-right: 20px;
+  background-color: rgb(231, 224, 149);
+  border-top-right-radius:500px;
+  border-bottom-right-radius: 500px; 
+}
+
+.app-sidenav-expanded mat-list-item{
+  width: 250px;
+  margin-right: 20px;
+  background-color: transparent;
+  border-top-right-radius:500px;
+  border-bottom-right-radius: 500px; 
+}
+
+.app-sidenav-expanded mat-list-item button{
+  border-top-right-radius:500px;
+  border-bottom-right-radius: 500px; 
+}
+
+// .app-sidenav-expanded mat-list-item button:hover{
+//   background-color: transparent; 
+// }
+
+.app-sidenav-expanded mat-list-item button mat-icon{
+  margin-right: 50px;
+  // margin-top: 20px;
+}
+
+.app-sidenav-expanded mat-list-item button span{
+  font-size: large;
+  font-family: sans-serif;
+  font-style: italic;
+  margin-top: 25px;
+}
+
+mat-list-item {
+  color: black;
+  padding: 8px 16px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+

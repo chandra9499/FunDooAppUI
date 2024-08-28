@@ -1,0 +1,74 @@
+<div class="notes" [ngClass]="{'listview':itemview ,'grideview':!itemview}">
+    <mat-card *ngFor="let note of filteredNotes" class="note">
+      <div [style.background]="note.colour">
+        <mat-card-header >
+          <mat-icon class="check-circle">check_circle</mat-icon>
+          <mat-card-title class="title">{{ note.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="text">{{ note.description }} </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <div *ngIf="!isTrash" class="note-footer">
+            <div class="tooltip">
+              <button mat-icon-button matTooltip="Remind me" [matMenuTriggerFor]="addalert">
+                <mat-icon>add_alert_outline</mat-icon>
+              </button>
+              <mat-menu #addalert="matMenu">
+                <button mat-menu-item >Tomorrow<span style="text-align: right;">8:00 AM</span></button>
+                <button mat-menu-item>Today<span style="text-align: right;">8:00 AM</span></button>
+              </mat-menu>
+            </div>
+            <div class="tooltip" >
+              <button mat-icon-button matTooltip="Collaborator" (click)="openDialog(note.noteId)">
+                <mat-icon>person_add_outline</mat-icon>
+              </button>
+            </div>
+            <div class="tooltip">
+              <button mat-icon-button matTooltip="Change Color" [matMenuTriggerFor]="palette">
+                <mat-icon>palette_outline</mat-icon>
+              </button>
+              <mat-menu class="color" #palette="matMenu">
+                <app-background-options (color)="reciveData($event,note.noteId)"></app-background-options>
+              </mat-menu>
+            </div>
+            <div class="tooltip">
+              <button mat-icon-button matTooltip="Add Image">
+                <mat-icon>image_outline</mat-icon>
+              </button>
+            </div>
+            <div class="tooltip">
+              <button mat-icon-button matTooltip="Archive" (click)="archiveNote(note.noteId,$event)">
+                <mat-icon>archive_outline</mat-icon>
+              </button>
+            </div>
+            <div class="tooltip">
+              <button mat-icon-button matTooltip="More" [matMenuTriggerFor]="morevert">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #morevert="matMenu" class="custom-menu">
+                <button mat-menu-item (click)="addToTrash(note.noteId, $event)">Delete Note</button>
+                <button mat-menu-item>Add Label</button>
+                <button mat-menu-item>Make a copy</button>
+                <button mat-menu-item>Version History</button>
+              </mat-menu>
+            </div>
+          </div>
+          <div class="note-footer" *ngIf="isTrash">
+            <div class="tooltip">
+              <button mat-icon-button matTooltip="delete" (click)="ondelete(note.noteId,$event)">
+                <!-- <mat-icon>delete_sweep</mat-icon> -->
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+            <div class="tooltip">
+              <button mat-icon-button matTooltip="restore" (click)="addToTrash(note.noteId,$event)">
+                <mat-icon>restore</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card-actions>
+      </div>
+    </mat-card>
+  </div>
+  

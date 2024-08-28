@@ -1,0 +1,42 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    background-color: whitesmoke;
+    position: absolute; /* Use absolute positioning */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the element */
+    width: 450px;
+    height: auto;
+    // margin: 0px 35% 0px 35%;
+    margin: 0; /* Remove margins since it's now centered using transform */
+  }
+  
+.main h2 {
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 20px;
+}
+
+.main .input .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.main .input .mat-mdc-form-field-focus-overlay {
+  background-color: transparent;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.main button {
+  width: 100%;
+  margin-bottom: 15px;
+}

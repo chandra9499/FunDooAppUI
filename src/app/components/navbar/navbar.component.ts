@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  @Input() isSidenavCollapsed = false;
+  @Input() hasClicked = false;
+  @Output() toggleSidenav = new EventEmitter<void>();
 
+  onToggleSidenav() {
+    this.toggleSidenav.emit();
+  }
 }

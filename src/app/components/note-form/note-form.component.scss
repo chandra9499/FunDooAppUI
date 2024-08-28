@@ -1,0 +1,105 @@
+.form-container {
+  background: white;
+  max-width: 600px;
+  margin: 32px auto;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  border: 1px solid white;
+  border-radius: 8px;
+}
+.isNotActive{
+  padding: 0px;
+}
+
+.form-container .input .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent;
+  transition: background-color 0.3s ease; 
+}
+
+.isActive .mat-mdc-form-field-focus-overlay {
+  background-color: transparent;
+}
+
+.isNotActive .mat-mdc-form-field-focus-overlay {
+  background-color: transparent;
+}
+
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  // padding: 10px;
+}
+.form-container form button{
+  display: inline;
+  align-items: center;
+  justify-content: end;
+  // flex-direction: column;
+  padding: 10px;
+}
+.note-footer{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.note-footer div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.note-footer div .tooltip{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+.note-footer div .tooltip mat-icon{
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+.note-footer div .tooltip mat-icon:hover{
+  // padding: 5px;
+  background-color: whitesmoke;
+  // border-radius: 50%;
+}
+.note-footer div button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 60px;
+}
+.form-container mat-card-actions{
+  display: inline;
+}
+.input {
+  background-color: white; 
+  // padding: 10px;
+  border-radius: 5px;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.icons button {
+  margin-right: 8px;
+}
+
+.close-btn {
+  background: none;
+  background-color: whitesmoke;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  height:35px;
+  width: 70px;
+  border-radius: 10px;
+}
+
+.close-btn:hover {
+  background-color: white;
+}

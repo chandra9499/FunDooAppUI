@@ -25,3 +25,35 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+ {
+        "noteId": 2,
+        "title": "java script",
+        "description": "JavaScript is an object-based scripting language which is lightweight and cross-platform.",
+        "colour": "red",
+        "isArchived": true,
+        "isDeleted": null,
+        "createdAt": "2024-08-26T09:24:43.462987",
+        "updatedAt": null,
+        "collaborators": [],
+        "labels": [
+            {
+                "labelsId": 1,
+                "labelsName": "programming languages",
+                "labelsDescription": "list of programming language"
+            },
+            {
+                "labelsId": 2,
+                "labelsName": "backend",
+                "labelsDescription": "list of backend programming language"
+            },
+            {
+                "labelsId": 3,
+                "labelsName": "frontend",
+                "labelsDescription": "list of backend programming language"
+            }
+        ],
+        "userId": 1,
+        "user": null
+    },

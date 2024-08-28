@@ -1,0 +1,36 @@
+<div class="main mat-elevation-z8">
+  <h2>Create your Fundoo Account</h2>
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="input">
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" formControlName="firstName" placeholder="First Name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="input">
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" formControlName="lastName" placeholder="Last Name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="input">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" placeholder="Email" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="input">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" placeholder="Password" 
+             pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{6,}$" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      SignUp
+    </button>
+  </form>
+  <span>OR</span> 
+  <div class="signin" >
+    <p>Already Have An account?</p>
+    <button mat-raised-button color="primary" type="button" routerLink="/login">
+      SignIn
+    </button>
+  </div>
+</div>

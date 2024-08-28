@@ -1,0 +1,40 @@
+.app-sidenav {
+    background-color: #fff;
+    color: #3c4043;
+    width: 230px;
+    box-shadow: 1px 0 3px rgba(60, 64, 67, 0.3);
+    transition: width 0.3s;
+  }
+  
+  .app-sidenav-collapsed {
+    width: 60px;
+  }
+  
+  .app-sidenav-expanded {
+    width: 230px;
+  }
+  
+  mat-list-item {
+    display: flex;
+    align-items: center;
+    color: #3c4043;
+    padding: 8px 16px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+  
+  mat-list-item.active {
+    background-color: #feefc3;
+  }
+  
+  mat-list-item mat-icon {
+    margin-right: 16px;
+    color: #5f6368;
+  }
+  
+  mat-list-item.active mat-icon {
+    color: #3c4043;
+  }
+  

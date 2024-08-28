@@ -1,0 +1,65 @@
+<div 
+  [ngClass]="{'form-container': true, 'isActive': isActive, 'isNotActive': !isActive}" 
+  (click)="onActive()">
+  
+  <form style="display: flex; flex-direction: column;" [formGroup]="noteForm">
+    <!-- Title input field, only visible when active -->
+    <mat-form-field class="input" style="margin-bottom: -1.25em" *ngIf="isActive">
+      <input matInput type="text" formControlName="title" class="title" placeholder="Title" />
+    </mat-form-field>
+
+    <!-- Note input field, always visible -->
+    <mat-form-field class="input">
+      <input matInput formControlName="description" placeholder="Take a note..." />
+    </mat-form-field>
+
+    <!-- Note actions, only visible when active -->
+    
+      <mat-card-actions *ngIf="isActive">
+        <div class="note-footer">
+          <div>
+            <div class="tooltip">
+              <mat-icon matTooltip="Remind me" [matMenuTriggerFor]="addalert">add_alert</mat-icon>
+              <mat-menu #addalert="matMenu">
+                <button mat-menu-item>Tomorrow<span style="text-align: right;">8:00 AM</span></button>
+                <button mat-menu-item>Today<span style="text-align: right;">8:00 AM</span></button>
+              </mat-menu>
+            </div>
+            <div class="tooltip">
+              <mat-icon matTooltip="Collaborator" (click)="openDialog()">person_add</mat-icon>
+            </div>
+            <div class="tooltip">
+              <mat-icon matTooltip="Change Color" [matMenuTriggerFor]="palette">palette</mat-icon>
+              <mat-menu #palette="matMenu">
+                <app-background-options (color)="recievData($event)"></app-background-options>
+              </mat-menu>
+            </div>
+            <div class="tooltip">
+              <mat-icon matTooltip="Add Image">image</mat-icon>
+            </div>
+            <div class="tooltip">
+              <mat-icon matTooltip="Archive">archive</mat-icon>
+            </div>
+            <div class="tooltip">
+              <mat-icon matTooltip="More" [matMenuTriggerFor]="morevert">more_vert</mat-icon>
+              <mat-menu #morevert="matMenu" class="custom-menu">
+                <button mat-menu-item>Add Label</button>
+                <button mat-menu-item>Make a copy</button>
+                <button mat-menu-item>Version History</button>
+              </mat-menu>
+            </div>
+            <div class="tooltip">
+              <mat-icon matTooltip="Undo">undo</mat-icon> 
+            </div>
+            <div class="tooltip">
+              <mat-icon matTooltip="Redo">redo</mat-icon>
+            </div>
+          </div>
+          <div>
+            <button mat-button class="close-btn" (click)="addNote($event)">Close</button>
+          </div>
+        </div>
+      </mat-card-actions>
+    
+  </form>
+</div>

@@ -1,0 +1,25 @@
+<div class="background-option" style="width: auto;">
+    <mat-icon>format_color_reset</mat-icon>
+    <div class="color-options">
+      <button
+        *ngFor="let color of colorOptions"
+        mat-button
+        [style.background]="color"
+        (click)="selectBackground(color)"
+      ></button>
+    </div>
+    
+    <!-- <mat-divider></mat-divider> -->
+  
+    <!-- <mat-icon>format_color_reset</mat-icon>
+    <div class="image-options">
+      <button
+        *ngFor="let image of imageOptions"
+        mat-button
+        [style.backgroundImage]="'url(' + image + ')'"
+        style="border-radius: 50%; border: none; margin: 5px; cursor: pointer; background-size: cover; display: inline;"
+        (click)="selectBackground(image)"
+      ></button>
+    </div> -->
+  </div>
+  

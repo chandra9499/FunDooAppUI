@@ -1,0 +1,36 @@
+.collaborator-container{
+    // padding: 10px;
+    margin: 10px;
+}
+
+mat-dialog-content .container{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+mat-dialog-content .container mat-icon{
+    margin-right: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: whitesmoke;
+}
+
+mat-dialog-content .container input{
+    margin-right: 10px;
+    border: none;
+    outline: none;
+    background-color: white;
+    width: 400px;
+    height: 50px;
+}
+
+.collaborator-container  mat-dialog-actions{
+    background-color: rgba(229, 229, 229, 0.792);
+    height: auto;
+    margin: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
